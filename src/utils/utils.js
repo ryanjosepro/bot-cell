@@ -104,9 +104,9 @@ const commandToObj = (commandText, commandKey = '/', paramKey = '-') => {
             objCommand.contents.push(value);
         } else if (isParam(value)) {
             if (isContent(array[index + 1])) {
-                objCommand.params[value] = array[index + 1];
+                objCommand.params[value.replace('-', '')] = array[index + 1];
             } else if (isParam(array[index + 1]) || index == array.length - 1) {
-                objCommand.params[value] = true;
+                objCommand.params[value.replace('-', '')] = true;
             }
         }
     })

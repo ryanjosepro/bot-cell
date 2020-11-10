@@ -36,6 +36,12 @@ client.on('message', async msg => {
                 case '/ping':
                     botGeneral.ping(msg);
                 break;
+
+                case '/travads':
+                    for (let count = 0; count < command.contents[0]; count++) {
+                        msg.channel.send(command.params.msg);
+                    }
+                break;
             }
         }
         
