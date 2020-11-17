@@ -3,6 +3,8 @@ BOTNET - 1.0
 
 /ping = Retorna o tempo de resposta do servidor;
 
+/travads <count> <mensagem> = repete a mensagem
+
 -Arquivos opus são transformados em mp3;
 
 */
@@ -38,7 +40,7 @@ client.on('message', async msg => {
                 break;
 
                 case '/travads':
-                    for (let count = 0; count < command.contents[0]; count++) {
+                    for (let count = 0; count < command.params.count; count++) {
                         msg.channel.send(command.params.msg);
                     }
                 break;
